@@ -56,6 +56,7 @@ books_libs = [
     BookLib(2, 5),
     BookLib(2, 6),
     BookLib(2, 7),
+    BookLib(2, 9),
 
     BookLib(3, 1),
     BookLib(3, 2),
