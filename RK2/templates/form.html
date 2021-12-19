@@ -9,9 +9,6 @@
         {% csrf_token %}
         {% if not delete %}
             {% bootstrap_form form %}
-{#            <table>#}
-{#                {{ form.as_table }}#}
-{#            </table>#}
         {% endif %}
         <input type="submit" value="{{ name }}"/>
     </form>
