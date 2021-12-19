@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+    <h2>{{ name }} data</h2>
+    {% if delete %}
+        <p>Are u sure u wanna delete {{ entity }} {{ object.title }}?</p>
+    {% endif %}
+    <form class="any-form" action="" method="post">
+        {% csrf_token %}
+        {% if not delete %}
+            {% bootstrap_form form %}
+{#            <table>#}
+{#                {{ form.as_table }}#}
+{#            </table>#}
+        {% endif %}
+        <input type="submit" value="{{ name }}"/>
+    </form>
+{% endblock %}
