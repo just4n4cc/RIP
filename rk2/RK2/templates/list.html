@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="list-header">
+        <h2>{{ name }}</h2>
+
+        {% if name == 'Books' %}
+            <button class="create"><a href="{% url 'book_create' %}">Create</a></button>
+        {% else %}
+            <button class="create"><a href="{% url 'lib_create' %}">Create</a></button>
+        {% endif %}
+    </div>
+    <ul>
+    {% for obj in objs %}
+        <li>
+        {% if name == 'Books' %}
+            <div class="elem"><b>Title: </b>{{ obj.title }}</div>
+            <div class="elem"><b>Author: </b>{{ obj.author }}</div>
+            <div class="elem"><b>Publish year: </b>{{ obj.pub_year }}</div>
+            <div class="button-wrapper">
+                <button class="update"><a href="{% url 'book_update' obj.book_id %}">Update</a></button>
+                <button class="delete"><a href="{% url 'book_delete' obj.book_id %}">Delete</a></button>
+            </div>
+        {% else %}
+            <div class="elem"><b>Name: </b>{{ obj.name }}</div><br>
+            <div class="elem"><b>Email: </b>{{ obj.email}}</div><br>
+            <div class="elem"><b>Phone: </b>{{ obj.phone }}</div><br>
+            <div class="button-wrapper">
+                <button class="update"><a href="{% url 'lib_update' obj.lib_id %}">Update</a></button>
+                <button class="delete"><a href="{% url 'lib_delete' obj.lib_id %}">Delete</a></button>
+            </div>
+        {% endif %}
+        <br>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
