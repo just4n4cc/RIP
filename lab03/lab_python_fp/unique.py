@@ -21,7 +21,7 @@ class Unique(object):
 
 
 def main():
-    data = ['AA', 'aa', 'dd', 'Aa', 7]
+    data = ['CC', 'cc', 'dd', 'cC', 7, 8, 7]
     for i in Unique(data, ignore_case=True):
         print(i)
 
